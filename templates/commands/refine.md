@@ -39,7 +39,7 @@ Given that refinement request, do this:
    - Note any existing [NEEDS CLARIFICATION] markers
 
 3. **Apply refinements based on user input**:
-   
+
    a. **Identify what to update**:
       - Parse the refinement request to determine which sections need changes
       - Common refinement types:
@@ -50,13 +50,13 @@ Given that refinement request, do this:
         - Updating success criteria
         - Refining scope or assumptions
         - Adding edge cases or constraints
-   
+
    b. **Make informed updates**:
       - For additions: Add new content in the appropriate section
       - For modifications: Update existing content while preserving structure
       - For clarifications: Replace [NEEDS CLARIFICATION] markers with concrete details
       - Document changes: Add a brief note in a "Revision History" section (create if needed)
-   
+
    c. **Maintain quality**:
       - Keep focus on WHAT and WHY (no implementation details)
       - Ensure all requirements remain testable
@@ -70,19 +70,19 @@ Given that refinement request, do this:
    - Keep history concise (1-2 sentences per revision)
 
 5. **Validate updated specification**:
-   
+
    a. **Check quality criteria**:
       - No implementation details leaked in
       - All requirements are testable
       - Success criteria are measurable and technology-agnostic
       - Spec sections are complete and consistent
       - Total [NEEDS CLARIFICATION] markers ≤ 3
-   
+
    b. **Update or create checklist**:
       - Load existing checklist from `FEATURE_DIR/checklists/requirements.md` if it exists
       - Update checklist items based on current spec state
       - If checklist doesn't exist, create it using the same structure as in `/speckit.specify`
-   
+
    c. **Report validation results**:
       - List any quality issues found
       - If critical issues exist, suggest specific fixes
