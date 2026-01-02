@@ -11,11 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- New `/speckit.refine` command for updating and refining existing specifications without creating new branches
-  - Allows iterative spec development and in-place updates
-  - Validates changes against spec quality checklist
+- New `/speckit.refine` command for updating specifications and propagating changes to all related artifacts
+  - Updates spec.md with refined requirements
+  - Automatically propagates changes to research.md, plan.md, data-model.md, contracts/, tasks.md, and quickstart.md
+  - Validates consistency across all artifacts
   - Maintains revision history of spec changes
   - Preserves existing feature branch and directory structure
+  - Self-sufficient workflow without requiring separate calls to `/speckit.plan` or `/speckit.tasks`
 
 ## [0.0.22] - 2025-11-07
 
