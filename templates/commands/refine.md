@@ -27,10 +27,28 @@ The text the user typed after `/speckit.refine` describes the changes they want 
 
 Given that refinement request, do this:
 
-1. **Verify we're on a feature branch**:
+1. **Verify we're on a feature branch or setup from spec file**:
    - Run `{SCRIPT}` to get the current feature context
    - Parse JSON output for `FEATURE_DIR`, `FEATURE_SPEC`, `IMPL_PLAN`, `TASKS`, and `BRANCH_NAME`
-   - If not on a feature branch or spec doesn't exist, ERROR: "No active feature found. Use /speckit.specify to create a new feature first."
+
+   **If on a feature branch** (script succeeds):
+   - Continue to step 2 with the feature context
+
+   **If NOT on a feature branch** (script fails):
+   - Ask the user: "No active feature branch detected. Please provide the path to the existing spec.md file you want to refine."
+   - Wait for user to provide the spec.md file path in the context
+   - Once provided, read the spec.md file
+   - Extract the branch name from the spec file by finding the line with `**Feature Branch**:` pattern
+     - Example: `**Feature Branch**: 001-module1-ai-intro-devs` → extract `001-module1-ai-intro-devs`
+     - If branch name not found in spec, ERROR: "Could not find Feature Branch metadata in the provided spec.md file"
+   - Fetch all remote branches: `git fetch --all --prune`
+   - Check if the branch exists remotely: `git ls-remote --heads origin <branch-name>`
+     - If branch exists remotely, ERROR: "Branch <branch-name> already exists remotely. Please checkout the existing branch or use a different approach."
+     - If branch does NOT exist remotely, create it locally: `git checkout -b <branch-name>`
+   - After creating the branch, determine the FEATURE_DIR based on branch name (e.g., `specs/<branch-name>/`)
+   - Set FEATURE_SPEC to the provided spec.md path
+   - Continue to step 2
+
    - For single quotes in args like "I'm Groot", use escape syntax: e.g 'I'\''m Groot' (or double-quote if possible: "I'm Groot")
 
 2. **Load existing artifacts**:
