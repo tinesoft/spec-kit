@@ -95,7 +95,15 @@ Given that refinement request, do this:
       - Review if spec changes introduce new unknowns or technical decisions
       - Add research entries for new technologies or approaches needed
       - Update existing decisions if spec changes invalidate previous choices
-      - Maintain the format: Decision, Rationale, Alternatives considered
+      - **Use web_search tool** (if available) to gather latest information:
+        - For new technologies mentioned in refinements, search for current best practices, latest versions, and recommendations
+        - For security/compliance topics, search for current standards and guidelines
+        - For performance considerations, search for recent benchmarks and optimization techniques
+        - For libraries/frameworks, search for latest stable versions, breaking changes, and community recommendations
+        - For design patterns, search for modern approaches and industry trends
+        - Include search timestamps to track when information was gathered
+        - Cite sources in research entries to support decision rationale
+      - Maintain the format: Decision, Rationale (with web search findings), Alternatives considered, Sources (with URLs and dates)
 
    b. **Update plan.md** (if it exists):
       - Revise Technical Context to reflect new requirements
