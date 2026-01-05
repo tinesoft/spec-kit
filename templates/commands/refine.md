@@ -95,7 +95,7 @@ Given that refinement request, do this:
       - Review if spec changes introduce new unknowns or technical decisions
       - Add research entries for new technologies or approaches needed
       - Update existing decisions if spec changes invalidate previous choices
-      - **Use web_search tool** (if available) to gather latest information:
+      - **Use web_search or fetch tools** (if available) to gather latest information:
         - For new technologies mentioned in refinements, search for current best practices, latest versions, and recommendations
         - For security/compliance topics, search for current standards and guidelines
         - For performance considerations, search for recent benchmarks and optimization techniques
