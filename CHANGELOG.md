@@ -7,6 +7,18 @@ All notable changes to the Specify CLI and templates are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- New `/speckit.refine` command for updating specifications and propagating changes to all related artifacts
+  - Updates spec.md with refined requirements
+  - Automatically propagates changes to research.md, plan.md, data-model.md, contracts/, tasks.md, and quickstart.md
+  - Validates consistency across all artifacts
+  - Maintains revision history of spec changes
+  - Preserves existing feature branch and directory structure
+  - Self-sufficient workflow without requiring separate calls to `/speckit.plan` or `/speckit.tasks`
+
 ## [0.0.22] - 2025-11-07
 
 - Support for VS Code/Copilot agents, and moving away from prompts to proper agents with hand-offs.
